@@ -1,0 +1,13 @@
+bin/
+.gauge/
+reports/
+obj/
+logs/
+gauge_bin/
+libs/
+.idea
+.gradle/
+*.iml
+build/
+*.log
+.DS_Store
