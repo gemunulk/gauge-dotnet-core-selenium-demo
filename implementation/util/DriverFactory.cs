@@ -18,7 +18,7 @@ namespace netcore.template.util
             {
                 case "chrome":
                     //return new ChromeDriver(@"/Users/gemunu/Documents/WebDriver");
-                    return new ChromeDriver(webDriverPath);
+                    return new ChromeDriver(@webDriverPath);
                 case "ie":
                     return new InternetExplorerDriver();
                 default:
