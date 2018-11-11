@@ -12,6 +12,7 @@ namespace netcore.template.Pages
 
         public static LoginPage LoginPage;
         public static ReservationPage ReservationPage;
+        public static RegistrationPage RegistrationPage;
 
         [BeforeSuite]
         public void init()
@@ -20,6 +21,7 @@ namespace netcore.template.Pages
 
             LoginPage =  new LoginPage();
             ReservationPage = new ReservationPage();
+            RegistrationPage = new RegistrationPage();
           
         }
 
