@@ -1,0 +1,22 @@
+dist: trusty
+addons: # get google-chrome-stable
+  chrome: stable
+
+before_script:
+  - sudo apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-keys 023EDB0B
+  - echo deb https://dl.bintray.com/gauge/gauge-deb nightly main | sudo tee -a /etc/apt/sources.list
+  - sudo apt-get update
+  - sudo apt-get install gauge
+
+language: csharp
+mono: none
+dotnet: 2.0
+install:
+  - dotnet restore
+script:
+  - gauge install dotnet  -v 0.1.0
+  - gauge telemetry off
+  - gauge -v
+  - dotnet restore
+  - dotnet build
+  - gauge run -p specs/  
