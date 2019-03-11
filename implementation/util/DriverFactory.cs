@@ -3,6 +3,8 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
+using WebDriverManager;
+using WebDriverManager.DriverConfigs.Impl;
 
 namespace netcore.template.util
 {
@@ -18,7 +20,8 @@ namespace netcore.template.util
             {
                 case "chrome":
                     //return new ChromeDriver(@"/Users/gemunu/Documents/WebDriver");
-                    return new ChromeDriver(@webDriverPath);
+                    new DriverManager().SetUpDriver(new ChromeConfig());
+                    return new ChromeDriver();
                 case "ie":
                     return new InternetExplorerDriver();
                 default:
